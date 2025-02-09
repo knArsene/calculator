@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useCalculator } from "@/contexts/CalculatorContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -42,7 +42,11 @@ const defaultQuickLinks = [
 
 export default function Sidebar({ open = true, onOpenChange }: SidebarProps) {
   const { setSelectedCategory, isDarkMode, toggleDarkMode } = useCalculator();
-  const [isOpen, setIsOpen] = useState(open);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
 
   const handleOpenChange = (value: boolean) => {
     setIsOpen(value);

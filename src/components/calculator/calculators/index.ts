@@ -3,14 +3,24 @@ import { BasicCalculator } from "./BasicCalculator";
 import { ScientificCalculator } from "./ScientificCalculator";
 import { BMICalculator } from "./health/BMICalculator";
 import { MortgageCalculator } from "./financial/MortgageCalculator";
+import { LoanCalculator } from "./financial/LoanCalculator";
+import { CalorieCalculator } from "./health/CalorieCalculator";
+import { FractionCalculator } from "./math/FractionCalculator";
 import { PercentageCalculator } from "./math/PercentageCalculator";
+import { AgeCalculator } from "./other/AgeCalculator";
+import { TimeCalculator } from "./other/TimeCalculator";
 
 export const calculatorComponents = {
   "Basic Calculator": BasicCalculator,
   "Scientific Calculator": ScientificCalculator,
   "BMI Calculator": BMICalculator,
   "Mortgage Calculator": MortgageCalculator,
+  "Loan Calculator": LoanCalculator,
+  "Calorie Calculator": CalorieCalculator,
+  "Fraction Calculator": FractionCalculator,
   "Percentage Calculator": PercentageCalculator,
+  "Age Calculator": AgeCalculator,
+  "Time Calculator": TimeCalculator,
 };
 
 export const categories = [

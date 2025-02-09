@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Moon, Sun } from "lucide-react";
+import { Search, Moon, Sun, Menu } from "lucide-react";
 import {
   TooltipProvider,
   Tooltip,
@@ -13,17 +13,29 @@ interface HeaderProps {
   isDarkMode?: boolean;
   onThemeToggle?: () => void;
   onSearch?: (searchTerm: string) => void;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 const Header = ({
   isDarkMode = false,
   onThemeToggle = () => {},
   onSearch = () => {},
+  open = false,
+  onOpenChange,
 }: HeaderProps) => {
   return (
     <header className="w-full h-16 bg-background border-b border-border px-4 flex items-center justify-between fixed top-0 z-50">
-      <div className="flex items-center gap-2">
-        <h1 className="text-xl font-bold text-foreground">Calculator Hub</h1>
+      <div className="flex items-center gap-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          className=""
+          onClick={() => onOpenChange?.(!open)}
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
+        <h1 className="text-xl font-bold text-foreground">Calculator Space</h1>
       </div>
 
       <div className="flex-1 max-w-2xl mx-4">
